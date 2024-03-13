@@ -10,7 +10,7 @@ async function handleUserSignup(req, res) {
             email,
             password
         });
-        return res.redirect("/login");
+        return res.status(301).redirect('/login');
     } catch (error) {
         console.error("Error handling user signup:", error);
         return res.status(500).json({ error: 'Internal server error' });
